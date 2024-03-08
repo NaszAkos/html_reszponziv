@@ -38,6 +38,7 @@ nav{
     padding: 0;
     display: flex;
     min-height: 150px;
+    width: 100%;
 }
 
 #leftside{
@@ -56,11 +57,61 @@ nav{
     background-color: aqua;
 }
 
+.menü{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.menü li{
+    display: inline-block;
+    border-right: 1px solid;
+}
+
+.menü li a{
+    display: block;
+    color: white;
+    padding: 5px 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menü li a:hover{
+    background-color: black;
+    color: white;
+}
+
 @media screen and (max-width: 800px){
     #content{
-        display: block;
+        flex-direction: column;
     }
-    #leftside, center, rightside{
-        width: 100%;
+    #leftside, #center, #rightside{
+        width: auto;
+    }
+
+    #center{
+         flex-grow: 1; 
+    }
+
+    #rightside{
+        display: none;
+    }
+
+    .menü li{
+        display: block;
+        border-right: none ;
+        border-bottom: 1px solid black;
+    }
+
+    .menü li:last-child{
+        border-bottom: none;
+    }
+
+    .menü li a{
+        padding: 10px;
+    }
+
+    header h1{
+        font-size: 130%;
     }
 }
